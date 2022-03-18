@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="{% static 'blog/img/HiiT-Logo-1.png' %}" type="image/png" />
+    {% if title %}
+    <title>Django Blog Hiit - {{ title }}</title>
+    {% else %}
+    <title>Django Blog Hiit </title>
+    {% endif%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/css/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/css/themify-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/vendors/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'blog/vendors/nice-select/css/nice-select.css' %}" />
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}" />
+  </head>
+
+  <body>
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+      <div class="main_menu">
+        <div class="search_input" id="search_input_box">
+          <div class="container">
+            <form class="d-flex justify-content-between" method="" action="">
+              <input
+                type="text"
+                class="form-control"
+                id="search_input"
+                placeholder="Search Here"
+              />
+              <button type="submit" class="btn"></button>
+              <span
+                class="ti-close"
+                id="close_search"
+                title="Close Search"
+              ></span>
+            </form>
+          </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="{% url 'blog-home' %}"
+              ><img src="{% static 'blog/img/HiiT-Logo-1.ico' %}" alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-bar"></span> <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'blog-home' %}">Home</a>
+                </li>
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'blog-about' %}">About</a>
+                </li>
+                
+                <li class="nav-item submenu dropdown">
+                  <a
+                    href="#"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Blog</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="single-blog.html"
+                        >Blog Details</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link search" id="search">
+                    <i class="ti-search"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--================ End Header Menu Area =================-->
+    {% block content %}{% endblock %}
+
+    <!--================ Start footer Area  =================-->
+    <footer class="footer-area section_gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 col-md-6 single-footer-widget">
+              <h4>All Courses Done</h4>
+            <ul>
+              <li><a href="#">Python for Software and web Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Digital Literacy</a></li>
+              <li><a href="#">CCNA</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 single-footer-widget">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="https://www.hiit.ng">HIIT</a></li>
+                <li><a href="#">Courses at HIIT</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 single-footer-widget">
+              <h4>Features</h4>
+              <ul>
+                <li><a href="#">Web development</a></li>
+                <li><a href="#">Console Applcation</a></li>
+                <li><a href="#">GUI</a></li>
+                <li><a href="#">User Interface</a></li>
+                <li>User Experience</li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 single-footer-widget">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">Django</a></li>
+                <li><a href="#">Figma</a></li>
+                <li><a href="#">Netilfy</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 single-footer-widget">
+              <h4>Vote of thanks</h4>
+              <p color="red">Special thanks to HIIT PLC <i class="ti-heart" aria-hidden="true"></i> for this great knowledge they've bestowed upon me. All appreciation goes to the CEO himself.</p>
+              <div class="form-wrap" id="mc_embed_signup">
+                
+              </div>
+            </div>
+          </div>
+          <div class="row footer-bottom d-flex justify-content-between">
+            <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+              
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> In Assistance with the Python Instructor(Mr Damilola)  <i class="ti-heart" aria-hidden="true"></i> by OLADAPO MIRACLE ABIDEMI</a>
+  
+            </p>
+            <div class="col-lg-4 col-sm-12 footer-social">
+              <a href="#"><i class="ti-facebook"></i></a>
+              <a href="#"><i class="ti-twitter"></i></a>
+              <a href="#"><i class="ti-dribbble"></i></a>
+              <a href="#"><i class="ti-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--================ End footer Area  =================-->
+  
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="{% static 'blog/js/jquery-3.2.1.min.js' %}"></script>
+      <script src="{% static 'blog/js/popper.js' %}"></script>
+      <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'blog/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+      <script src="{% static 'blog/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'blog/js/owl-carousel-thumb.min.js' %}"></script>
+      <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+      <script src="{% static 'js/mail-script.js' %}"></script>
+      <!--gmaps Js-->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+      <script src="{% static 'blog/js/gmaps.min.js' %}"></script>
+      <script src="{% static 'blog/js/theme.js' %}"></script>
+    </body>
+  </html>
+  
